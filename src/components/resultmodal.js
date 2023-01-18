@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Modal, TouchableOpacity} from 'react-native';
+import {View, Text, Modal,StatusBar,TouchableOpacity} from 'react-native';
 import GLOBALS from '../assets/index';
 const {FONTS, COLOR} = GLOBALS;
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -16,7 +16,7 @@ const ResultModal = ({
 }) => {
   return (
     <Modal
-      animationType={'slide'}
+      animationType={"fade"}
       transparent={true}
       visible={isModalVisible}
       onRequestClose={handleOnClose}>

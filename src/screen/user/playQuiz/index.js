@@ -105,6 +105,8 @@ const PlayQuiz = ({navigation, route}) => {
       }}>
       <Text style={styles.quizTitle}>{title}</Text>
 
+    <View style={styles.coverView}>
+
       <FlatList
         horizontal
         ref={ref}
@@ -146,7 +148,6 @@ const PlayQuiz = ({navigation, route}) => {
                         let tempQuestions = [...questions];
                         tempQuestions[index].selectedOption = option;
                         setQuestions([...tempQuestions]);
-                        console.log(questions);
                       }}>
                       <Text
                         style={[
@@ -223,6 +224,7 @@ const PlayQuiz = ({navigation, route}) => {
           navigation.navigate('Home');
         }}
       />
+      </View>
     </ImageBackground>
   );
 };

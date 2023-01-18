@@ -16,15 +16,14 @@ const CustomDraw = ({navigation}) => {
           justifyContent: 'center',
           alignItems: 'center',
         }}>
-        <ImageLoad
-          resizeMode="contain"
-          source={IMAGE.logo3}
-          style={{
-            height: '80%',
-            width: '80%',
-            overflow: 'hidden',
-            borderRadius: 20,
-          }}></ImageLoad>
+          <ImageLoad
+                source={IMAGE.logo3}
+                resizeMode="stretch"
+                style={{width: 80,
+                  height: 71,
+                  margin: 5,
+                  overflow: 'hidden',
+                  borderRadius: 8}}></ImageLoad>
       </View>
       <DrawerContentScrollView>
         <DrawerItem

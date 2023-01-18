@@ -4,6 +4,7 @@ const {height, width} = Dimensions.get('window');
 const {FONTS, COLOR} = GLOBALS;
 const styles = StyleSheet.create({
   quizTitle: {
+    alignSelf:'center',
     fontSize: 40,
     fontFamily: FONTS.NunitoBold,
     paddingHorizontal: 20,
@@ -12,17 +13,14 @@ const styles = StyleSheet.create({
   quizView: {
     width: width,
     height: height,
-
-    justifyContent: 'flex-start',
     alignItems: 'center',
   },
   questionView: {
-    marginTop: 14,
-
+    marginTop:60,
     padding: 20,
     height: '60%',
     elevation: 10,
-    borderRadius: 10,
+    borderRadius: 40,
     width: '90%',
     backgroundColor: COLOR.WHITE,
   },
@@ -58,7 +56,7 @@ const styles = StyleSheet.create({
   },
   nextButton: {
     width: '48%',
-    backgroundColor: COLOR.PRIMARY,
+    backgroundColor: COLOR.WHITE,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 10,
@@ -66,15 +64,22 @@ const styles = StyleSheet.create({
   buttonTitle: {
     fontSize: 20,
     padding: 15,
-    color: COLOR.WHITE,
+    color: COLOR.PRIMARY,
     fontFamily: FONTS.NunitoBold,
   },
   submitButton: {
     width: '48%',
-    backgroundColor: COLOR.PRIMARY,
+    backgroundColor: COLOR.WHITE,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 10,
+  },
+  coverView: {
+    flex: 1,
+    justifyContent: 'center',
+    backgroundColor: COLOR.PRIMARY,
+    borderTopRightRadius: 50,
+    borderTopLeftRadius: 50,
   },
 });
 export default styles;

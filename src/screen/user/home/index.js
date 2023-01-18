@@ -18,7 +18,12 @@ import styles from './style';
 const {FONTS, COLOR} = GLOBALS;
 
 const Home = ({navigation}) => {
+
+  useEffect (() =>{
+  navigation.addListener('focus',()=>{
   Platform.OS === 'android' ? StatusBar.setBackgroundColor(COLOR.PINK) : null;
+  })
+  },);
 
   const [allQuizzes, setAllQuizzes] = useState([]);
   const [refreshing, setRefreshing] = useState(false);
