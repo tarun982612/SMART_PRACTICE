@@ -8,9 +8,7 @@ import {
   Image,
 } from 'react-native';
 import React, {useState, useEffect} from 'react';
-import CustomButton from '../../components/customButton';
 import GLOBALS from '../../assets';
-import Icon from 'react-native-vector-icons/Ionicons';
 import {getQuizzes} from '../../util/dataBase';
 const {FONTS, COLOR, IMAGE} = GLOBALS;
 

@@ -21,10 +21,6 @@ import {getQuestionByQuizId, getQuizById} from '../../../util/dataBase';
 import {color} from 'react-native-reanimated';
 
 const PlayQuiz = ({navigation, route}) => {
-  Platform.OS === 'android'
-    ? StatusBar.setBackgroundColor(COLOR.PRIMARY)
-    : null;
-
   const [currentQuizId, setCurrentQuizId] = useState(route.params.quizId);
   const [title, setTitle] = useState('');
   const [questions, setQuestions] = useState([]);
@@ -138,6 +134,7 @@ const PlayQuiz = ({navigation, route}) => {
       style={{
         flex: 1,
       }}>
+      <StatusBar backgroundColor={COLOR.PRIMARY} />
       <Text style={styles.quizTitle}>{title}</Text>
 
       <View style={styles.coverView}>
