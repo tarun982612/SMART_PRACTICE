@@ -1,10 +1,11 @@
 import firestore from '@react-native-firebase/firestore';
 import {ToastAndroid} from 'react-native';
 
-export const createQuiz = (currentQuizId, title, description) => {
+export const createQuiz = (currentQuizId, title, description, time) => {
   return firestore().collection('quizes').doc(currentQuizId).set({
     title,
     description,
+    time,
   });
 };
 

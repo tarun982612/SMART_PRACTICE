@@ -11,6 +11,7 @@ const CustomInput = ({
   placeholder,
   secureTextEntry,
   label,
+  keyboardType,
 }) => {
   return (
     <Controller
@@ -31,6 +32,7 @@ const CustomInput = ({
               onBlur={onBlur}
               placeholder={placeholder}
               style={styles.input}
+              keyboardType={keyboardType}
               secureTextEntry={secureTextEntry}
             />
           </View>

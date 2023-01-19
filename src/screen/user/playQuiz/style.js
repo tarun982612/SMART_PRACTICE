@@ -4,7 +4,7 @@ const {height, width} = Dimensions.get('window');
 const {FONTS, COLOR} = GLOBALS;
 const styles = StyleSheet.create({
   quizTitle: {
-    alignSelf:'center',
+    alignSelf: 'center',
     fontSize: 40,
     fontFamily: FONTS.NunitoBold,
     paddingHorizontal: 20,
@@ -16,10 +16,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   questionView: {
-    marginTop:60,
-    padding: 20,
+    marginTop: 25,
+    padding: 15,
+    paddingTop: 25,
+    justifyContent: 'center',
     height: '60%',
-    elevation: 10,
+    elevation: 50,
     borderRadius: 40,
     width: '90%',
     backgroundColor: COLOR.WHITE,
@@ -52,7 +54,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: 20,
-    bottom: 30,
   },
   nextButton: {
     width: '48%',
