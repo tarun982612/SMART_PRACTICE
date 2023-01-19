@@ -18,13 +18,6 @@ import styles from './style';
 const {FONTS, COLOR} = GLOBALS;
 
 const Home = ({navigation}) => {
-
-  useEffect (() =>{
-  navigation.addListener('focus',()=>{
-  Platform.OS === 'android' ? StatusBar.setBackgroundColor(COLOR.PINK) : null;
-  })
-  },);
-
   const [allQuizzes, setAllQuizzes] = useState([]);
   const [refreshing, setRefreshing] = useState(false);
 
@@ -46,6 +39,7 @@ const Home = ({navigation}) => {
   }, []);
   return (
     <ImageBackground style={{flex: 1}} source={IMAGE.homebackground}>
+      <StatusBar backgroundColor={COLOR.PINK} />
       <ScrollView>
         <Icon
           name="apps"
@@ -110,7 +104,9 @@ const Home = ({navigation}) => {
               Start learning new Staff
             </Text>
             <TouchableOpacity
-              onPress={() => Alert}
+              onPress={() =>
+                Alert.alert('This component is in under processing')
+              }
               style={{
                 flexDirection: 'row',
                 backgroundColor: '#f58084',

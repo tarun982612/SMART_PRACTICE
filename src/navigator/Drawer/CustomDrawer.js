@@ -1,6 +1,6 @@
 import React from 'react';
 import {DrawerContentScrollView, DrawerItem} from '@react-navigation/drawer';
-import {View, Image} from 'react-native';
+import {View} from 'react-native';
 import GLOBALS from '../../assets';
 import ImageLoad from 'react-native-image-placeholder';
 
@@ -16,14 +16,16 @@ const CustomDraw = ({navigation}) => {
           justifyContent: 'center',
           alignItems: 'center',
         }}>
-          <ImageLoad
-                source={IMAGE.logo3}
-                resizeMode="stretch"
-                style={{width: 80,
-                  height: 71,
-                  margin: 5,
-                  overflow: 'hidden',
-                  borderRadius: 8}}></ImageLoad>
+        <ImageLoad
+          source={IMAGE.logo3}
+          resizeMode="stretch"
+          style={{
+            width: 80,
+            height: 80,
+            margin: 5,
+            overflow: 'hidden',
+            borderRadius: 8,
+          }}></ImageLoad>
       </View>
       <DrawerContentScrollView>
         <DrawerItem
@@ -32,7 +34,18 @@ const CustomDraw = ({navigation}) => {
           labelStyle={{fontSize: 20, fontFamily: FONTS.NunitoRegular}}
           onPress={() => navigation.navigate('Profile')}
         />
-
+        <DrawerItem
+          activeTintBackgroundColor={COLOR.PRIMARY}
+          label="Reminder"
+          labelStyle={{fontSize: 20, fontFamily: FONTS.NunitoRegular}}
+          onPress={() => navigation.navigate('Profile')}
+        />
+        <DrawerItem
+          activeTintBackgroundColor={COLOR.PRIMARY}
+          label="LeaderBoard"
+          labelStyle={{fontSize: 20, fontFamily: FONTS.NunitoRegular}}
+          onPress={() => navigation.navigate('LeaderBoard')}
+        />
         <DrawerItem
           label="Logout"
           onPress={() => {
