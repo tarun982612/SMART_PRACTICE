@@ -5,10 +5,11 @@ const IMAGE = {
   logo3: require('./logo3.png'),
   xd: require('./xd.png'),
   sketch: require('./sketch.png'),
-  ae: require('./ae.png'), 
-  sear: require('./sear.png'), 
+  ae: require('./ae.png'),
+  sear: require('./sear.png'),
   undraw: require('./undraw.png'),
   homebackground: require('./Home.png'),
+  addquestion: require('./addquestion.gif'),
 };
 
 export default IMAGE;

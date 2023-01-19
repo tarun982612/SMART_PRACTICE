@@ -1,7 +1,16 @@
-import {ImageBackground, StyleSheet, FlatList, Text, View} from 'react-native';
+import {
+  ImageBackground,
+  StyleSheet,
+  FlatList,
+  Text,
+  View,
+  TouchableOpacity,
+  Image,
+} from 'react-native';
 import React, {useState, useEffect} from 'react';
 import CustomButton from '../../components/customButton';
 import GLOBALS from '../../assets';
+import Icon from 'react-native-vector-icons/Ionicons';
 import {getQuizzes} from '../../util/dataBase';
 const {FONTS, COLOR, IMAGE} = GLOBALS;
 
@@ -46,12 +55,26 @@ const Quizhome = ({navigation}) => {
         )}
       />
 
+      {/* <View style={styles.buttonView}>
+        <TouchableOpacity>
+          <Icon
+            name="add-circle"
+            size={100}
+            color={COLOR.PRIMARY}
+            onPress={() => {
+              navigation.navigate('Createquiz');
+            }}
+          />
+        </TouchableOpacity>
+      </View> */}
+
       <View style={styles.buttonView}>
-        <CustomButton
-          text={'Create Quiz'}
-          style={styles.button}
-          onPress={() => navigation.navigate('Createquiz')}
-        />
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate('Createquiz');
+          }}>
+          <Image source={IMAGE.addquestion} style={{height: 80, width: 80}} />
+        </TouchableOpacity>
       </View>
     </ImageBackground>
   );
