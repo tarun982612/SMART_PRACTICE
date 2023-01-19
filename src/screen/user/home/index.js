@@ -57,7 +57,7 @@ const Home = ({navigation}) => {
               fontFamily: FONTS.NunitoBold,
               color: COLOR.WHITE,
             }}>
-            Welcome back Tarun Pal !
+            Welcome back Tarun !
           </Text>
         </View>
         <View

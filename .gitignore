@@ -38,7 +38,7 @@ local.properties
 npm-debug.log
 yarn-error.log
 
-\android\app
+android/app
 
 # BUCK
 buck-out/
