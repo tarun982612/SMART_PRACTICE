@@ -6,9 +6,9 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   listView: {
-    flex:1,
+    flex: 1,
     paddingVertical: 20,
-    backgroundColor:'pink'
+    backgroundColor: 'pink',
   },
   quizView: {
     padding: 20,
@@ -24,6 +24,12 @@ const styles = StyleSheet.create({
   textView: {
     flex: 1,
     paddingRight: 10,
+  },
+  textView1: {
+    flex: 1,
+    paddingRight: 10,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
   title: {
     fontFamily: FONTS.NunitoBold,
@@ -43,5 +49,21 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontFamily: FONTS.NunitoBold,
   },
+  quizView1: {
+    padding: 20,
+    borderRadius: 10,
+    marginVertical: 5,
+    marginHorizontal: 10,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    backgroundColor: COLOR.WHITE,
+    elevation: 10,
+  },
+  messView: {
+    flexWrap: 'wrap',
+    alignItems: 'flex-end',
+  },
+  messText: {fontFamily: FONTS.NunitoBold, fontSize: 15, color: 'red'},
 });
 export default styles;

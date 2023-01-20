@@ -27,7 +27,13 @@ const Createquiz = ({navigation}) => {
   const saveQuiz = async (data, e) => {
     const currentQuizId = Math.floor(100000 + Math.random() * 9000).toString();
     // Save to firestore
-    await createQuiz(currentQuizId, data.title, data.description, data.time);
+    await createQuiz(
+      currentQuizId,
+      data.title,
+      data.description,
+      data.time,
+      lastdate,
+    );
 
     //navigate to add Question
     navigation.navigate('Question', {
@@ -54,10 +60,7 @@ const Createquiz = ({navigation}) => {
 
   const handleConfirm = date => {
     setLastdate(getDate(date));
-
     hideDatePicker();
-
-    console.log(lastdate);
   };
 
   useEffect(() => {

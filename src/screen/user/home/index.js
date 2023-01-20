@@ -15,8 +15,10 @@ import GLOBALS from '../../../assets';
 import {getQuizzes} from '../../../util/dataBase';
 import Icon from 'react-native-vector-icons/Ionicons';
 import styles from './style';
+import moment from 'moment';
+import {color} from 'react-native-reanimated';
 const {FONTS, COLOR} = GLOBALS;
-
+var currentdate = moment().format('D MMM YYYY').toString();
 const Home = ({navigation}) => {
   const [allQuizzes, setAllQuizzes] = useState([]);
   const [refreshing, setRefreshing] = useState(false);
@@ -101,7 +103,7 @@ const Home = ({navigation}) => {
                 width: 250,
                 paddingRight: 100,
               }}>
-              Start learning new Staff
+              Start learning new Stuff
             </Text>
             <TouchableOpacity
               onPress={() =>
@@ -138,7 +140,7 @@ const Home = ({navigation}) => {
         </View>
         <Text
           style={{
-            color: '#345c74',
+            color: COLOR.BLACK,
             fontFamily: 'Bold',
             fontSize: 20,
             paddingHorizontal: 20,
@@ -153,25 +155,55 @@ const Home = ({navigation}) => {
           refreshing={refreshing}
           showsVerticalScrollIndicator={false}
           style={styles.listView}
-          renderItem={({item: quiz}) => (
-            <View style={styles.quizView}>
-              <View style={styles.textView}>
-                <Text style={styles.title}>{quiz.title}</Text>
-                {quiz.description != '' ? (
-                  <Text style={styles.description}>{quiz.description}</Text>
-                ) : null}
-              </View>
-              <TouchableOpacity
-                style={styles.button}
-                onPress={() => {
-                  navigation.navigate('PlayQuiz', {
-                    quizId: quiz.id,
-                  });
-                }}>
-                <Text style={styles.buttonText}>Play</Text>
-              </TouchableOpacity>
-            </View>
-          )}
+          renderItem={({item: quiz}) => {
+            if (currentdate >= quiz.date) {
+              return (
+                <View style={styles.quizView1}>
+                  <View style={styles.textView1}>
+                    <View style={{flexWrap: 'wrap'}}>
+                      <Text style={styles.title}>{quiz.title}</Text>
+
+                      {quiz.description != '' ? (
+                        <Text style={styles.description}>
+                          {quiz.description}
+                        </Text>
+                      ) : null}
+                    </View>
+                    <View style={styles.messView}>
+                      <Text style={styles.messText}>This quiz expired on</Text>
+                      <Text style={styles.messText}>{quiz.date}</Text>
+                    </View>
+                  </View>
+                </View>
+              );
+            } else {
+              return (
+                <View style={styles.quizView}>
+                  <View style={styles.textView}>
+                    <Text style={styles.title}>{quiz.title}</Text>
+
+                    {quiz.description != '' ? (
+                      <Text style={styles.description}>{quiz.description}</Text>
+                    ) : null}
+
+                    <Text style={styles.timeView}>
+                      Time limit: {quiz.time} min
+                    </Text>
+                  </View>
+
+                  <TouchableOpacity
+                    style={styles.button}
+                    onPress={() => {
+                      navigation.navigate('PlayQuiz', {
+                        quizId: quiz.id,
+                      });
+                    }}>
+                    <Text style={styles.buttonText}>Play</Text>
+                  </TouchableOpacity>
+                </View>
+              );
+            }
+          }}
         />
       </ScrollView>
     </ImageBackground>
